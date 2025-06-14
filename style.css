@@ -1,0 +1,181 @@
+/* CSS Reset */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Fonts */
+@font-face {
+  font-family: Figtree-Medium;
+  src: url('assets/fonts/static/Figtree-Medium.ttf');
+}
+
+@font-face {
+  font-family: Figtree-ExtraBold;
+  src: url('assets/fonts/static/Figtree-ExtraBold.ttf');
+}
+
+/* Colors */
+:root {
+  --yellow: #f4d04e;
+  --gray-950: #111111;
+  --gray-500: #6b6b6b;
+  --white: #ffffff;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--yellow);
+  font-family: Figtree-Medium;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--white);
+  width: 384px;
+  padding: 24px;
+  border: 1px solid var(--gray-950);
+  border-radius: 20px;
+  box-shadow: 8px 8px 0 black;
+}
+
+@media (max-width: 375px) {
+  .card {
+    width: 327px;
+    margin: 0 24px;
+  }
+}
+
+.card__img {
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+
+.card__content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.card__learning {
+  background-color: var(--yellow);
+  color: var(--gray-950);
+  font-family: Figtree-ExtraBold;
+  font-size: 0.875rem;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.card__date {
+  color: var(--gray-950);
+  font-size: 0.875rem;
+  margin-bottom: 12px;
+}
+
+.card__title {
+  color: var(--gray-950);
+  font-family: Figtree-ExtraBold;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.card__title:hover {
+  color: var(--yellow);
+  cursor: pointer;
+}
+
+.card__description {
+  color: var(--gray-500);
+  margin-bottom: 24px;
+}
+
+.card__author-container {
+  display: flex;
+  align-items: center;
+}
+
+.card__author-img {
+  width: 32px;
+  height: 32px;
+}
+
+.card__author-name {
+  font-family: Figtree-ExtraBold;
+  font-size: 0.875rem;
+  margin-left: 12px;
+}
